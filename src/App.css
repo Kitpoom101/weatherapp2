@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base{
+  body{
+    @apply
+    /* pretty */
+    w-screen h-screen bg-center bg-no-repeat bg-cover
+    bg-[url(src/assets/weather-background.jpg)] 
+    /* overscreen */
+    overflow-hidden
+  }
+  input{
+    @apply
+    /* pretty */
+    bg-white inset-1 h-10
+    /* border */
+    border-2 border-green-700 rounded-3xl
+    /* no auto space */
+    focus:outline-none
+    /* when select */
+    focus:ring-1 focus:ring-green-900 
+    /* animation */
+    transition duration-150 ease-in-out 
+    backdrop-blur-2xl /*fixing */
+    /* text */
+    font-mono text-center text-xl font-bold
+  }
+}
+@layer components{
+
+  .main{
+    @apply 
+    /* flex */
+    flex flex-col justify-center items-center
+  }
+  
+  /* ======================
+  ------title area---------
+  ========================= */
+  
+  .titleContainer{
+    @apply
+    /* center */
+    flex flex-col justify-center w-4/16 min-w-[450px]
+    /* position */
+    absolute
+    /* animation */
+    transition-all duration-500 ease-in-out
+    /* pretty */
+    border-2 rounded-2xl border-emerald-800
+    bg-sky-100
+    p-4
+  }
+  .title{
+    @apply 
+    /* center */
+    text-center 
+    /* text */
+    font-bold text-3xl text-indigo-600 text-shadow-cyan-700
+    /* animate */
+    animate-pulse
+    /* margin */
+    mb-2.5
+  }
+  .findBtn{
+    @apply
+    /* width & border */
+    w-1/8 bg-green-200 rounded-2xl border-2 border-green-700
+    /* animation */
+    transition-colors duration-300 ease-in-out
+    hover:bg-green-300 active:bg-green-400
+    /* pretty */
+    cursor-pointer
+    /* text */
+    font-bold
+  }
+
+  .inputList{
+    @apply
+    z-10
+  }
+  /* ======================
+  ------weather area-------
+  ========================= */
+
+  .weatherArea{
+    @apply
+    /* pretty */
+    bg-gray-500/60 pointer-events-none rounded-3xl backdrop-blur-xs 
+    /* display && position */
+    flex w-3/4 h-5/8 absolute
+    top-5/16 flex-col items-center justify-start
+    /* animation */
+    transition-all duration-500 ease-in-out
+  }
+  .cityTime{
+    @apply
+    /* pretty && display*/
+    flex size-fit mt-0 h-fit
+    /* text */
+    text-white text-[5rem] font-extrabold text-shadow-blue-400 text-shadow-lg
+    /* animation */
+    transition-all duration-300 ease-in-out
+  }
+
+  .weatherReport{
+    @apply
+    /* pretty */
+    w-7/8 h-3/5 translate-y-1/10 
+  }
+
+  .cloud{
+    @apply
+    h-full bg-violet-300
+  }
+
+}
+
+@layer utilities {
+  .text-shadow-cyan-700 {
+    text-shadow: 2px 2px 4px rgb(0, 128, 128, 0.7); /* cyan-ish shadow */
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-blue-600;
+  }
+  .text-glow {
+    text-shadow: 0 0 3px #0f74b7, 0 0 8px #39a6ef;
+  }
+}
+
+/* >change language mode -> tailwind */
