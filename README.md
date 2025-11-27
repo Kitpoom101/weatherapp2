@@ -1,11 +1,11 @@
 # 🌤️ Weather App (React + OpenWeather API)
 
-Responsive weather app. You can search for any city(that exist) and look for their
--Time
--Weather condition
--Temperature
--Humidity
--Wind speed
+Responsive weather app. You can search for any city(that exist) and look for their  
+-Time  
+-Weather condition  
+-Temperature  
+-Humidity  
+-Wind speed  
 
 # 🚀How to use
 1.download this git repo  
